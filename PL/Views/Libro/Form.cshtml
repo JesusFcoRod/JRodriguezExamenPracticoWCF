@@ -1,0 +1,46 @@
+﻿@model ML.Libro
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registro de Libros</h2>
+
+@using (Html.BeginForm("Form", "Libro", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.IdLibro, "IdLibro: ")
+            @Html.TextBoxFor(model => model.IdLibro)
+        </div>
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Nombre, "Titulo Libro: ")
+            @Html.TextBoxFor(model => model.Nombre)
+        </div>
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.FechaPublicacion, "Fecha de Publicacion")
+            @Html.TextBoxFor(model => model.FechaPublicacion)
+        </div>
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.NumeroPaginas, "No.Paginas: ")
+            @Html.TextBoxFor(model => model.NumeroPaginas)
+        </div>
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Autor.IdAutor, "Autor: ")
+            @Html.TextBoxFor(model => model.Autor.IdAutor)
+        </div>
+    </div>
+
+    <br />
+
+    <div>
+        <button name="button">Guardar</button>
+    </div>
+
+}
+
